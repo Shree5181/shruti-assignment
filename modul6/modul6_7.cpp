@@ -7,39 +7,63 @@ class cricketer
     void getrun()
     {
         cout<<"enter run: ";
-        cin>>run;
+        for(int i=0;i<5;i++)
+        {
+        cin>>run[i];
+        }
     }
     
     void showrun()
+    
     {
-        cout<<"value of run"<<run<<end1;
+        for(int i=0;i<5;i++)
+        {
+        cout<<"value of run"<<run[i]<<endl;
+        }
     }
+    
 };
 class batsman:public cricketer
 {
-    int total run;
-    float average runs;
-    int best performance;
+    public:
+    int totalrun=0;
+    float averageruns;
+    int performance;
     void gettotal()
     {
-        cout<<"gettotal: ";
-
+    for(int j = 0;j < 5;j++)
+        {
+            totalrun=totalrun+run[j];
+            
+        }
+        cout<<"Total Run= "<<totalrun<<endl;
     }
-    void calculate for average runs()
+    void calculateaverageruns()
     {
-        cout<<"calculate average runs: ";
+       averageruns= totalrun/5;
+       cout<<"Average run= "<<averageruns<<endl;
     }
-    void best performance()
+    void bestperformance()
     {
-        cout<<"performance: ";
+        for(int i=0;i<5;i++)
+        {
+            if (averageruns<run[i])
+            {
+                cout<<"Best Performance = "<<run[i]<<endl;
+            }
+        }
     }
 
 };
 
 int main()
 {
-    cricketer a1,a2,a3,a4,a5;
-    batsman d1,d2,d3,d4,d5;
+    batsman b1;
+    b1.getrun();
+    b1.showrun();
+    b1.gettotal();
+    b1.calculateaverageruns();
+    b1.bestperformance();
 
     return 0;
 }
