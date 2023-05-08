@@ -9,8 +9,8 @@ int swap_numbers(T& x, T& y)
     y = t;
     return 0;
 }
-  
-int main()
+
+  int main()
 {
     int a, b;
     a = 10, b = 20;
