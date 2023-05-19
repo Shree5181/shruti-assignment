@@ -188,12 +188,111 @@ select firstname,lastname from customer;
 select salesprice from sales;
 select recommended_price from assignment;
 
+/*4*/
 
 
+create table store (
+FirstName varchar(20),
+LastName varchar(20),
+City varchar(20),
+State varchar(20),
+Zip int,
+ProductID int,
+SalePrice int,
+SaleDate int
+);
+
+insert into store (FirstName,LastName,City,State,Zip,ProductID,SalePrice,SaleDate)values("Mansi","Joshi","Mumbai","MH","400001","3","205","05/12/2022");
 
 
+/*5*/
+
+select avg(salesprice)from sales;
+
+/*7*/
+
+select category,salesprice from assignment inner join sales on assignment.prd_ID=sales.prd_ID;
+
+/*8*/
+
+select max(salesprice) from sales;
+
+/*9*/
+
+select salesdate,sum(salesprice) from sales group by salesdate order by salesdate;
 
 
+/*1*/
+select * from employee where empname like "p%";
 
+/*2*/
 
+select * from empsalary where ispermanent="yes"and salary>5000;
+
+/*3*/
+
+select * from employee where emailid like "%gmail.com";
+
+/*4*/
+
+select * from employee where department="E-104"or department="E-102";
+
+/*6*/
+select sum(salary) from empsalary where ispermanent="yes";
+
+/*7*/
+
+select * from  employee where empname like "%a";
+
+ /*8*/
+ 
+ select *  from empproject group by  projectid; 
+ 
+ /*9*/
+
+select * from empproject where startyear="2010";
+
+/*10*/
+
+select * from empproject where  startyear = endyear;
+
+/*11*/
+
+select * from employee where empname like "%%h%";
+
+/*12*/
+
+select * from employee where empheadid>103;
+
+/*13*/
+
+select * from employee where empname="abhishek";
+
+/*14*/
+
+select * from empdept where deptname="HR";
+
+/*15*/
+
+select empid from empsalary where ispermanent="yes";
+
+select * from employee where empid in(select empid from empsalary where ispermanent="yes");
+
+/*16*/
+
+select empid from empsalary where ispermanent="no";
+
+select * from employee where empid in(select empid from empsalary where ispermanent="no");
+
+/*17*/
+
+select * from empdept where dept_off="monday";
+
+/*18*/
+
+select * from country where cname="india";
+
+/*19*/
+
+select * from empdept where deptname="development";
 
